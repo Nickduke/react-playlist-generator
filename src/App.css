@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+/* Header */
+
+/* Form */
+
+/* Playlist */
+.playlist {
+  background: grey;
+  min-height: 50vh;
+}
+
+/* Song */
+
+li {
+  list-style: none;
+}

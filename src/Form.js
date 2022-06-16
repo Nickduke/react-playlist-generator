@@ -1,21 +1,21 @@
-const Form = (props) => {
+const Form = ({ userInput, handleInputChange, handleSubmit }) => {
   return (
     <form
       action='submit'
       onSubmit={() => {
-        props.handleSubmit(props.userInput);
+        handleSubmit(userInput);
       }}
     >
       <label htmlFor='newSong'>Add a song to your playlist!</label>
       <input
         type='text'
         id='newSong'
-        onChange={props.handleInputChange}
-        value={props.userInput}
+        onChange={handleInputChange}
+        value={userInput}
       />
       <button
         onClick={(e) => {
-          props.handleSubmit(e);
+          handleSubmit(e);
         }}
       >
         add song

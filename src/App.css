@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .App-logo {
@@ -38,17 +39,37 @@
 }
 
 /* Header */
-
+.header {
+  text-align: center;
+}
 /* Form */
+form {
+  text-align: center;
+  padding: 2em;
+}
 
 /* Playlist */
 .playlist {
   background: grey;
   min-height: 50vh;
+  max-width: 40%;
+  padding: 1em 2em;
+  margin: 0 auto;
+  border-radius: 30px;
 }
 
 /* Song */
 
 li {
   list-style: none;
+  /* display: block; */
+}
+
+/* .song {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.songName {
+  max-width: 20%;
 }

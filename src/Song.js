@@ -1,10 +1,20 @@
-const Song = (props) => {
+const Song = ({ songs, handleRemoveSong }) => {
   return (
     <ul className='songList'>
-      <li>
-        <p>Song name</p>
-        <button onClick={props.handleRemoveSong}>Remove song</button>
-      </li>
+      {songs.map((song) => {
+        return (
+          <li className='song' key={song.key}>
+            <p className='songName'>{song.name}</p>
+            <button
+              onClick={() => {
+                handleRemoveSong(song.key);
+              }}
+            >
+              Remove Song
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 };

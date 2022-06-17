@@ -5,6 +5,7 @@ import { getDatabase, ref, onValue, push, remove } from 'firebase/database';
 import Header from './Header';
 import Form from './Form';
 import Playlist from './Playlist';
+import Footer from './Footer';
 
 function App() {
   const [userInput, setUserInput] = useState('');
@@ -61,31 +62,9 @@ function App() {
         userInput={userInput}
       />
       <Playlist songs={songs} handleRemoveSong={handleRemoveSong} />
+      <Footer />
     </div>
   );
 }
 
 export default App;
-
-// MVP
-// Create app tthat allows user to a song to a playlist and store in db
-
-// STRETCH
-// Have separate inputs for artist name and song
-
-// APP Component
-// Track state of songs [songs, setSongs]
-// Create function handleRemoveSong
-// Use useEffect and store onValue event listener within
-// Iterate through data using for in loop
-// Update songs state to match db values
-// Pass props down to form comp
-
-// HEADER Component (stateless)
-
-// FORM Component
-// Track state of input change [userInput, setUserInput] then set within handleInputChange function
-// Create handleSubmit function to prevent default form behaviour, create db ref and push to userInput state of db
-
-// PLAYLIST Component
-// -SONG Component

@@ -12,7 +12,7 @@ const Form = ({ userInput, handleInputChange, handleSubmit }) => {
         id='newSong'
         onChange={handleInputChange}
         value={userInput}
-        placeholder=''
+        placeholder='That one U2 song...'
       />
       <button
         className='addSong'

@@ -217,8 +217,7 @@ template {
   --primary-font: 'Kanit', sans-serif;
   --secondary-font: 'Cairo', sans-serif;
   --blue: #3ab0ff;
-  --orange: #ffb562;
-  --pink: #f87474;
+  --red: rgb(255, 106, 43);
   --grey: #f9f2ed;
 }
 
@@ -248,6 +247,12 @@ body {
   color: white;
 }
 
+body {
+  height: 100vh;
+  background: black;
+  overflow-x: hidden;
+}
+
 /* Typography */
 
 html {
@@ -258,6 +263,8 @@ h1 {
   font-family: var(--secondary-font);
   font-weight: normal;
   font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: var(--grey);
 }
 
 span {
@@ -268,6 +275,7 @@ span {
   text-transform: uppercase;
   color: var(--blue);
   font-weight: bold;
+  text-shadow: 5px 5px 10px #000000, 10px 5px 5px var(--grey);
   /* background: linear-gradient(90deg, #000, var(--blue), #000);
   background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -289,25 +297,24 @@ span {
 h3 {
   font-family: var(--secondary-font);
   font-size: 2rem;
+  color: var(--grey);
 }
 
 p {
   font-family: var(--primary-font);
-  font-weight: normal;
 }
 
 button {
-  background: var(--blue);
   border: none;
+  background: none;
   line-height: 100%;
   transition: 0.1s ease-out;
-  border: 1px solid var(--blue);
   font-size: 1.5rem;
+  color: var(--grey);
 }
 
 button:hover,
 button:focus {
-  background: none;
   cursor: pointer;
 }
 
@@ -320,43 +327,78 @@ button:focus {
 form {
   text-align: center;
   margin: 0 auto;
-  padding: 2em;
-  border: 0.5px solid;
-  border-radius: 50px;
+  padding: 1em;
+  border: 0.5px solid var(--blue);
+  border-radius: 20px;
   max-width: 80%;
-  background: var(--pink);
+  color: var(--grey);
   font-family: var(--secondary-font);
   font-size: 1rem;
+  transition: all 0.1s linear;
 }
 
 input {
   font-family: var(--primary-font);
   background: none;
-  border: 0.5px solid;
-  background: #ffb662;
-  border-radius: 5px;
+  border: none;
+  max-width: 100%;
+  background: none;
+  padding: 0.2em 0.6em;
+  border-bottom: 0.5px solid var(--grey);
+  color: var(--grey);
 }
 
 input:focus,
 textarea:focus {
-  border-bottom: 1px solid;
+  border-bottom: 0.5px solid var(--blue);
   outline: none;
+}
+
+textarea {
+  color: var(--grey);
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.addSong {
+  border-radius: 5px;
+  padding: 0 5px;
+  line-height: 30px;
+}
+
+.addSong:hover,
+.addSong:focus {
+  background: rgb(47, 255, 95);
+  color: black;
 }
 
 /* Playlist */
 .playlist {
-  background: #f8747454;
   min-height: 50vh;
   max-width: 80%;
   padding: 1em 2em;
-  margin: 1em auto;
-  border-radius: 50px;
-  border: 0.5px solid;
+  margin: 2em auto;
+  border-radius: 20px;
+  border: 0.5px solid var(--blue);
+  transition: all 0.1s linear;
 }
 
 .playlist:hover,
 .playlist:focus {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 10px 10px 10px var(--blue), 10px 5px 5px var(--grey);
+}
+
+.playlistTitle {
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var(--primary-font);
+  color: var(--blue);
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 10px #000000, 10px 5px 5px var(--grey);
 }
 
 /* Song */
@@ -374,6 +416,8 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 0.5px solid var(--grey);
+  padding-top: 1em;
 }
 
 .songName {
@@ -381,20 +425,26 @@ li {
   transition: 1s linear;
   margin: 0.5em 2em 0.5em 0;
   display: inline;
-  border-bottom: 0.5px solid;
+  color: var(--grey);
   max-width: 100%;
   word-break: break-all;
 }
 
 .removeButton {
   border-radius: 5px;
-  padding: 0 10px;
-  line-height: 30px;
+  padding: 0 8px;
+  line-height: 28px;
+}
+
+.removeButton:hover,
+.removeButton:focus {
+  color: black;
+  background-color: red;
 }
 
 /* Footer */
 .footer {
-  background: var(--orange);
+  background: var(--blue);
   text-align: center;
 }
 
@@ -402,4 +452,43 @@ li {
   padding: 0.4em;
   font-size: 1rem;
   margin: 0;
+}
+
+/* MediaQueries */
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  span {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 1em;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  .addSong {
+    margin-top: 0.5em;
+    width: 100%;
+  }
+
+  .songName {
+    font-size: 1rem;
+  }
+
+  input {
+    margin: 1em 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }

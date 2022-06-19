@@ -12,8 +12,10 @@ const Form = ({ userInput, handleInputChange, handleSubmit }) => {
         id='newSong'
         onChange={handleInputChange}
         value={userInput}
+        placeholder=''
       />
       <button
+        className='addSong'
         onClick={(e) => {
           handleSubmit(e);
         }}

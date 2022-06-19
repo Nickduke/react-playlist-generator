@@ -54,14 +54,16 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <Header />
-      <Form
-        handleSubmit={handleSubmit}
-        handleInputChange={handleInputChange}
-        userInput={userInput}
-      />
-      <Playlist songs={songs} handleRemoveSong={handleRemoveSong} />
+    <div className='app'>
+      <div className='wrapper'>
+        <Header />
+        <Form
+          handleSubmit={handleSubmit}
+          handleInputChange={handleInputChange}
+          userInput={userInput}
+        />
+        <Playlist songs={songs} handleRemoveSong={handleRemoveSong} />
+      </div>
       <Footer />
     </div>
   );

@@ -6,11 +6,12 @@ const Song = ({ songs, handleRemoveSong }) => {
           <li className='song' key={song.key}>
             <p className='songName'>{song.name}</p>
             <button
+              className='removeButton'
               onClick={() => {
                 handleRemoveSong(song.key);
               }}
             >
-              Remove Song
+              -
             </button>
           </li>
         );

@@ -6,7 +6,7 @@ const Form = ({ userInput, handleInputChange, handleSubmit }) => {
         handleSubmit(userInput);
       }}
     >
-      <label htmlFor='newSong'>Add a song to your playlist!</label>
+      <label htmlFor='newSong'>Add a song to your playlist: </label>
       <input
         type='text'
         id='newSong'
@@ -18,7 +18,7 @@ const Form = ({ userInput, handleInputChange, handleSubmit }) => {
           handleSubmit(e);
         }}
       >
-        add song
+        +
       </button>
     </form>
   );

@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 html {
   line-height: 1.15;
@@ -215,9 +215,8 @@ template {
 
 :root {
   --primary-font: 'Kanit', sans-serif;
-  --secondary-font: 'Cairo', sans-serif;
+  --secondary-font: 'Abel', sans-serif;
   --blue: #3ab0ff;
-  --red: rgb(255, 106, 43);
   --grey: #f9f2ed;
 }
 
@@ -275,6 +274,7 @@ span {
   color: var(--blue);
   font-weight: bold;
   text-shadow: 5px 5px 10px #000000, 10px 5px 5px var(--grey);
+
   /* background: linear-gradient(90deg, #000, var(--blue), #000);
   background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -408,7 +408,6 @@ ul {
 
 li {
   list-style: none;
-  /* display: block; */
 }
 
 .song {
@@ -426,7 +425,6 @@ li {
   display: inline;
   color: var(--grey);
   max-width: 100%;
-  word-break: break-all;
 }
 
 .removeButton {
